@@ -1,7 +1,7 @@
 # Kosha — Privacy Policy
 
 **Effective date:** 9 May 2026
-**Last updated:** 9 May 2026
+**Last updated:** 10 May 2026
 
 Kosha is a personal library cataloguing app for books and board games. This page describes what data the app collects, why, and how it's handled. It's written to be understandable rather than to impress lawyers — if anything is unclear, email **garveeta09@gmail.com** and we'll explain.
 
@@ -19,12 +19,13 @@ When you sign up and use the app, Kosha collects:
 - **Your library.** The books and other items you add — titles, authors, covers, genres, your reading status, your ratings, notes, your reading start/finish dates, the location label you assigned, and any tags or metadata you supply.
 - **Photos you take or pick.** When you scan a book cover, the photo is sent to the book identification service (see "Service providers" below) and, where useful, the resulting cover image URL is stored alongside the item. Photos that aren't successfully identified are not uploaded to long-term storage; they're processed in transit.
 - **App preferences.** Locally on your device, Kosha remembers small UI preferences such as your selected view mode (shelf / grid / list) and sort order. These never leave your device.
+- **Crash reports.** When the app crashes or hits an unexpected error, a stack trace and basic device context (operating system version, app version, device model) are sent to our crash-reporting service so we can fix the bug. These reports do not include the contents of your library, the photos you've taken, or anything you've typed. See the Sentry row of the Service Providers table below.
 
 Kosha does **not** collect:
 
 - Advertising or marketing identifiers.
 - Your contacts, location, or device identifiers.
-- Crash analytics or behavioural analytics in the current version. (A future version may add crash reporting; if so, this policy will be updated and you'll be notified.)
+- Behavioural analytics — we do not track which screens you visit, which features you use, or how long you spend in the app.
 - Payment information of any kind.
 
 ## How Kosha uses your information
@@ -49,6 +50,7 @@ To operate, Kosha uses a small number of third-party services. Each receives onl
 | Firebase Storage | Google LLC | Stores cover photos that aren't sourced from public databases | Cover images you upload |
 | Claude API (Vision) | Anthropic, PBC | Identifies book titles and authors from photos you scan | The photos you submit for identification (not stored beyond the API call) |
 | Google Books API | Google LLC | Looks up book metadata (cover, ISBN, year, etc.) | Search queries (typically a title + author or ISBN) |
+| Sentry | Functional Software, Inc. (Sentry) | Crash and error reporting so we can fix bugs | Stack traces of crashes, app version, OS version, device model. No library contents, no photos, no typed text. |
 
 These services are bound by their own privacy and data-processing terms. Their data is not used by Kosha for any purpose other than what's described above.
 
