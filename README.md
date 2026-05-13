@@ -1,7 +1,7 @@
 # Kosha — Privacy Policy
 
 **Effective date:** 9 May 2026
-**Last updated:** 12 May 2026
+**Last updated:** 13 May 2026
 
 Kosha is a personal library cataloguing app for books and board games. This page describes what data the app collects, why, and how it's handled. It's written to be understandable rather than to impress lawyers — if anything is unclear, email **garveeta09@gmail.com** and we'll explain.
 
@@ -15,7 +15,7 @@ Kosha lets you photograph books you own, get them automatically identified, orga
 
 When you sign up and use the app, Kosha collects:
 
-- **Account information.** Your email address (always) and your name (from your Google account if you sign in with Google, or entered manually otherwise). Optionally, you can add your phone number so friends can find you on Kosha through their contacts; this is never required. Authentication is handled by Firebase Authentication; Kosha never sees your Google password.
+- **Account information.** Depending on how you sign in: your email address (when you sign in with Email or Google) or your phone number (when you sign in with Phone). Your name comes from your Google account if you sign in with Google, or is entered manually otherwise. If you sign in with Email or Google, you can also optionally add your phone number so friends can find you on Kosha through their contacts; this is never required. Authentication, including SMS one-time-passcode delivery for phone sign-in, is handled by Firebase Authentication; Kosha never sees your Google password or your verification codes.
 - **Your library.** The books and other items you add — titles, authors, covers, genres, your reading status, your ratings, notes, your reading start/finish dates, the location label you assigned, and any tags or metadata you supply.
 - **Photos you take or pick.** When you scan a book cover, the photo is sent to the book identification service (see "Service providers" below) and, where useful, the resulting cover image URL is stored alongside the item. Photos that aren't successfully identified are not uploaded to long-term storage; they're processed in transit.
 - **Friend connections.** If you accept or send a friend request, Kosha stores a small record linking the two accounts (who is connected to whom, and who initiated the connection). This is what lets the app show you your friends' libraries on the "Circle" tab. You can decline incoming requests; declined connections are not surfaced to either party as friendships.
@@ -49,7 +49,7 @@ To operate, Kosha uses a small number of third-party services. Each receives onl
 
 | Service | Run by | What it does | What it sees |
 |---|---|---|---|
-| Firebase Authentication | Google LLC | Sign-in, password reset, session management | Your email, name, and authentication tokens |
+| Firebase Authentication | Google LLC | Sign-in, password reset, session management, and SMS one-time-passcode delivery for phone sign-in | Your email, name, phone number (if you use Phone sign-in or add it to your profile), and authentication tokens |
 | Cloud Firestore | Google LLC | Stores your library, account data, and friend connections | All library data you save in the app, plus friendship records |
 | Firebase Storage | Google LLC | Stores cover photos that aren't sourced from public databases | Cover images you upload |
 | Cloud Functions for Firebase | Google LLC | Runs Kosha's server-side contacts-matching logic (looking up which contacts are on Kosha) | Lowercased emails and phone numbers from your address book, only during the matching call; not stored after the call returns |
